@@ -5,4 +5,7 @@ fun main() {
 
     val student2 = Student("2707", "Иванов", "Петр", "Сергеевич", "+79298323235")
     student2.printInfo()
+
+    val student3 = Student("2708", "Пупкин", "Иван", "Петрович", "124234242")
+    student2.printInfo()
 }

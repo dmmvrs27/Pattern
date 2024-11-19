@@ -9,7 +9,17 @@ class Student(
     var email: String? = null,
     var gitHub: String? = null
 ) {
+
+    companion object {
+        fun isValidPhone(phone: String): Boolean {
+            return phone.matches(Regex("^(\\+7[0-9]{10}|8[0-9]{10})\$"))
+        }
+    }
+
     init {
+        if (phone != null && !isValidPhone(phone!!))
+            throw IllegalArgumentException("Неверный формат номера!")
+
         println("Студент с $id под именем $firstName был добавлен!")
     }
     constructor(id: String, surname: String, name: String, patronymic: String) :
