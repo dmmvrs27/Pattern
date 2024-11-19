@@ -56,6 +56,17 @@ class Student(
         hashSt["git"]?.toString()
     )
 
+    fun setContacts(tg: String? = this.telegram, git: String? = this.gitHub, email: String? = this.email, phone: String? = this.phone) {
+        if (tg != null && !isValidTg(tg)) throw IllegalArgumentException("Неверный формат телеграмм!")
+        if (git != null && !isValidGit(git)) throw IllegalArgumentException("Неверный формат Git!")
+        if (email != null && !isValidEmail(email)) throw IllegalArgumentException("Неверный формат email!")
+        if (phone != null && !isValidPhone(phone)) throw IllegalArgumentException("Неверный формат номера!")
+        this.telegram = tg
+        this.gitHub = git
+        this.email = email
+        this.phone = phone
+    }
+
     fun validate() {
         if (gitHub != null && !anyContact())
             throw IllegalArgumentException("Необходим хотя бы 1 контакт!")
