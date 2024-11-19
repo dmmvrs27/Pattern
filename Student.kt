@@ -12,8 +12,19 @@ class Student(
     init {
         println("Студент с $id под именем $firstName был добавлен!")
     }
-    constructor(id: Int, surname: String, name: String, patronymic: String) :
-            this(id.toString(), surname, name, patronymic, null, null, null, null) //toString преобразовает Int в String
+    constructor(id: String, surname: String, name: String, patronymic: String) :
+            this(id, surname, name, patronymic, null, null, null, null)
+
+    constructor(hashSt: HashMap<String, Any?>) : this(
+        (hashSt["id"] as? String) ?: throw IllegalArgumentException("ID обязателен"),
+        (hashSt["surname"] as? String) ?: throw IllegalArgumentException("Фамилия обязательна"),
+        (hashSt["name"] as? String) ?: throw IllegalArgumentException("Имя обязательно"),
+        (hashSt["patronymic"] as? String) ?: throw IllegalArgumentException("Отчество обязательно"),
+        hashSt["phone"]?.toString(),
+        hashSt["tg"]?.toString(),
+        hashSt["email"]?.toString(),
+        hashSt["git"]?.toString()
+    )
 
     fun printInfo() {
         println("ID: $id")
