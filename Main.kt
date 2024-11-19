@@ -1,5 +1,5 @@
 fun main() {
-    val student1 = Student("2706", "Малышев", "Денис", "Амилович", telegram="@dmmvrs")
+    val student1 = Student("2706", "Малышев", "Денис", "Амилович", telegram="@dmmvrs", phone = "+79298491219", gitHub = "github.com/dmmvrs")
     student1.printInfo()
     println()
 
