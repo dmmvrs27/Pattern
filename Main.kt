@@ -3,7 +3,7 @@ fun main() {
     student1.printInfo()
     println()
 
-    val student2 = Student("2707", "Иванов", "Петр", "Сергеевич", "+79298323235")
+    val student2 = Student("2707", "Иванов", "Петр", "Сергеевич", "+79298323235", gitHub = "github.com/dmmvrs")
     student2.printInfo()
 
     val student3 = Student("2708", "Пупкин", "Иван", "Петрович", "124234242")
