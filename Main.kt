@@ -6,9 +6,9 @@ fun main() {
         thrd.setContacts(tg = "@adood")
         thrd.write()
         val ph = Student(4, "Tommy", "Doggy", "Poppy", email = "TDP@mail.ru", git = "github.com/TDPgit")
-        val stringData = "5 Hail Malia Tate @maliaht github.com/MalHT htMalia@mail.ru 89996664455"
+        val stringData = "5 Hail Malia Tate @maliaht github.com/MalHT"
         val fromStr = Student(stringData)
-    } catch (e: IllegalArgumentException) {
+    } catch (e: Exception) {
         println(e.message)
     }
 }
