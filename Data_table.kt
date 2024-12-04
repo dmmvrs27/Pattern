@@ -9,3 +9,10 @@ class Data_table<T>(private val data: Array<Array<T>>) {
     fun getColumnCount(): Int = data[0].size
     fun getRowCount(): Int = data.size
 }
+
+class Data_list<T : Comparable<T>>(private val elements: Array<T>){
+    init {
+        require(elements.isNotEmpty()) { "Массив не может быть пустой!" }
+        elements.sort()
+    }
+}
