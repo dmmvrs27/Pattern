@@ -1,3 +1,6 @@
+import java.io.File
+import java.io.IOException
+
 open class StudentBase(
     val id: Int, val surname: String, val name: String, val patronymic: String, var tg: String? = null,
     var git: String? = null, var email: String? = null, var phone: String? = null
@@ -73,6 +76,15 @@ class Student(
     id: Int, surname: String, name: String, patronymic: String, tg: String? = null,
     git: String? = null, email: String? = null, phone: String? = null
 ) : StudentBase(id, surname, name, patronymic, tg, git, email, phone) {
+    companion object {
+        fun readFromTxt(path: String): Student{
+            val file = File(path)
+            if (!file.exists() || !file.canRead())
+                throw IOException("Path is incorrect!")
+            val line = file.readText().trim()
+            return Student(line)
+        }
+    }
     init {
         validate()
         println("Студент $id был добавлен успешно!")

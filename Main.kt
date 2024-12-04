@@ -5,12 +5,18 @@ fun main() {
         val thrd = Student(3, "Tomb", "Raider", "Third", git = "github.com/tnt", phone = "+78889990000")
         thrd.setContacts(tg = "@adood")
         thrd.write()
+        println(sec.toString()+"\n")
         val ph = Student(4, "Tommy", "Doggy", "Poppy", email = "TDP@mail.ru", git = "github.com/TDPgit")
         val stringData = "5 Hail Malia Tate @maliaht github.com/MalHT"
         val fromStr = Student(stringData)
-        fromStr.getInfo()
+        println(ph.getContact().substringAfter(":").trim())
+        println()
         val short = Student_short(frst)
         val short2 = Student_short(6, "Sam T.K., github.com/Samtk, 89998887675")
+        val path = ".//stud.txt"
+        // 7 Hey Kollins Rape @HeyKey github.com/heykap
+        val txt = Student.readFromTxt(path)
+        val txtShort = Student_short(txt)
     } catch (e: Exception) {
         println(e.message)
     }
