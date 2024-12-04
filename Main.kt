@@ -8,6 +8,7 @@ fun main() {
         val ph = Student(4, "Tommy", "Doggy", "Poppy", email = "TDP@mail.ru", git = "github.com/TDPgit")
         val stringData = "5 Hail Malia Tate @maliaht github.com/MalHT"
         val fromStr = Student(stringData)
+        fromStr.getInfo()
     } catch (e: Exception) {
         println(e.message)
     }
