@@ -9,6 +9,8 @@ fun main() {
         val stringData = "5 Hail Malia Tate @maliaht github.com/MalHT"
         val fromStr = Student(stringData)
         fromStr.getInfo()
+        val short = Student_short(frst)
+        val short2 = Student_short(sec)
     } catch (e: Exception) {
         println(e.message)
     }

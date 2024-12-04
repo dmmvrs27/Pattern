@@ -1,0 +1,1 @@
+class ParsingException(message: String) : RuntimeException(message)
