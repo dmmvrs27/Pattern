@@ -1,7 +1,6 @@
-open class StudentBase(
-    val id: Int, val surname: String, val name: String, val patronymic: String, var tg: String? = null,
-    var git: String? = null, var email: String? = null, var phone: String? = null
-) {
+open class StudentBase(val id: Int, val surname: String, val name: String, val patronymic: String, var tg: String? = null,
+                       var git: String? = null, var email: String? = null, var phone: String? = null)
+{
     companion object {
         fun isValidPhone(phone: String): Boolean {
             return phone.matches(Regex("^(\\+7[0-9]{10}|8[0-9]{10})\$"))
