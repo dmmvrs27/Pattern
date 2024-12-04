@@ -1,5 +1,5 @@
 class Student_short(id: Int, val surnameIn: String, git: String, val contact: String)
-    : StudentBase(id, "", "", "", null, git) {
+    : StudentBase(id, "", "", "", null, git), Comparable<Student_short> {
     init {
         optValidate()
         println("Cтудент $id (кратко) добавлен успешно!")
@@ -41,5 +41,11 @@ class Student_short(id: Int, val surnameIn: String, git: String, val contact: St
             "${this::class.simpleName} $id:\n" + "ФИО - $surnameIn; " + "git - $git; " +
                     "$what - $contact.\n"
         )
+    }
+    override fun compareTo(other: Student_short): Int {
+        return this.surnameIn.compareTo(other.surnameIn)
+    }
+    override fun toString(): String {
+        return "${this::class.simpleName}(id=$id, surnameIn=$surnameIn, git=$git, contact=$contact)"
     }
 }
