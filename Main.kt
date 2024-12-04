@@ -21,6 +21,10 @@ fun main() {
         )
         val intTable = Data_table(intArr)
         val strTable = Data_table(strArr)
+        val r = 1; val c = 2
+        println("Элемент целочисленного массива [${r+1}][${c+1}]: ${intTable.getElem(r, c)}")
+        println("Кол-во строк в строковом массиве: ${strTable.getRowCount()}\n" +
+                "Кол-во столбцов в строковом массиве: ${strTable.getColumnCount()}")
     }
     catch (e: Exception) {
         println(e.message)
