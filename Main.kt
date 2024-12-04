@@ -2,7 +2,7 @@ fun main() {
     try {
         val frst = Student(1, "Ralf", "Bobby", "Braun", "@RaBBiT", git = "github.com/RuMiJ")
         val sec = Student(2, "Ruby", "John", "Milligan", git = "github.com/RuMiJ", phone = "81234567890")
-        val thrd = Student(3, "Tomb", "Raider", "Third", git = "github.com/RuMiJ", phone = "+78889990000")
+        val thrd = Student(3, "Tomb", "Raider", "Third", git = "github.com/tnt", phone = "+78889990000")
         thrd.setContacts(tg = "@adood")
         thrd.write()
         val ph = Student(4, "Tommy", "Doggy", "Poppy", email = "TDP@mail.ru", git = "github.com/TDPgit")
@@ -10,7 +10,7 @@ fun main() {
         val fromStr = Student(stringData)
         fromStr.getInfo()
         val short = Student_short(frst)
-        val short2 = Student_short(sec)
+        val short2 = Student_short(6, "Sam T.K., github.com/Samtk, 89998887675")
     } catch (e: Exception) {
         println(e.message)
     }
