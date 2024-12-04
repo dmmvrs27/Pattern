@@ -10,12 +10,16 @@ class Student(
             val file = File(path)
             if (!file.exists() || !file.canRead())
                 throw IOException("Path is incorrect!")
+            println("Read from $path:\n")
             return file.readLines().map { Student(it) }
         }
         fun writeToTxt(path: String, students: List<Student>) {
             val file = File(path)
-            students.map { file.appendText(it.toTxt()
-                    + System.lineSeparator()) }
+            if (!file.exists() || !file.canWrite())
+                throw IOException("Path is incorrect!")
+            students.map { file.appendText(it.toTxt().trim()
+                    + "\n") }
+            println("Written to $path!\n")
         }
     }
     init {
