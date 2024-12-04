@@ -18,6 +18,7 @@ class Student_short(id: Int, val surnameIn: String, git: String, val contact: St
         git = info.substringAfter(",").substringBefore(",").trim(),
         contact = info.substringAfter(",").substringAfter(",").trim()
     )
+
     override fun optValidate() {
         if (!isValidIn(surnameIn))
             throw IllegalArgumentException("Неверный формат ФИО!")

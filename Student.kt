@@ -10,8 +10,12 @@ class Student(
             val file = File(path)
             if (!file.exists() || !file.canRead())
                 throw IOException("Path is incorrect!")
-            val line = file.readText().trim()
             return file.readLines().map { Student(it) }
+        }
+        fun writeToTxt(path: String, students: List<Student>) {
+            val file = File(path)
+            students.map { file.appendText(it.toTxt()
+                    + System.lineSeparator()) }
         }
     }
     init {
@@ -20,7 +24,7 @@ class Student(
         write()
     }
 
-    constructor(id: Int, surname: String, name: String, patronymic: String) :
+    constructor(id: Int, surname: String, name: String, patronymic: String):
             this(id, surname, name, patronymic, null, null, null, null)
 
     constructor(hashStudents: HashMap<String, Any?>) : this(
@@ -56,7 +60,6 @@ class Student(
             else -> "phone: $phone"
         }
     }
-
     fun getInfo(): String {
         val infoSt = "${getIn()}, $git, ${getContact()}"
         println(infoSt)

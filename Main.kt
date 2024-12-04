@@ -14,7 +14,9 @@ fun main() {
         val short = Student_short(frst)
         val short2 = Student_short(6, "Sam T.K., github.com/Samtk, 89998887675")
         val path = ".//stud.txt"
+        val pathWr = ".//student.txt"
         val txt = Student.readFromTxt(path).map {it.getInfo()}
+        Student.writeToTxt(pathWr, Student.readFromTxt(path))
     } catch (e: Exception) {
         println(e.message)
     }
