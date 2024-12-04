@@ -9,22 +9,14 @@ fun main() {
         Student.writeToTxt(pathWr, txt)
         val test = Student.readFromTxt(pathWr)
         */
-        val intArr = arrayOf(
-            arrayOf(1, 2, 3),
-            arrayOf(4, 5, 6),
-            arrayOf(7, 8, 9)
-        )
-        val strArr = arrayOf(
-            arrayOf("a", "b", "c"),
-            arrayOf("d", "e", "f"),
-            arrayOf("g", "i", "j")
-        )
-        val intTable = Data_table(intArr)
-        val strTable = Data_table(strArr)
-        val r = 1; val c = 2
-        println("Элемент целочисленного массива [${r+1}][${c+1}]: ${intTable.getElem(r, c)}")
-        println("Кол-во строк в строковом массиве: ${strTable.getRowCount()}\n" +
-                "Кол-во столбцов в строковом массиве: ${strTable.getColumnCount()}")
+        val st1 = Student_short(1, "Иванов И.И., github.com/ivanov, +79995456556")
+        val st2 = Student_short(2, "Петров П.П.", "github.com/petrov", "petrov@mail.ru")
+        val thrd = Student(3, "Сидоров", "Семен", "Сергеевич", "@sidrrr", "github.com/sidorov")
+        val st3 = Student_short(thrd)
+        val students = arrayOf(st1,st2,st3)
+        val studentList = Data_list_student_short(students)
+        println("Имена аттрибутов: ${studentList.buildNames().joinToString()}")
+        println("Сущности аттрибутов: ${studentList.buildData()}")
     }
     catch (e: Exception) {
         println(e.message)
