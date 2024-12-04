@@ -1,11 +1,14 @@
 fun main() {
-    val student1 = Student("2706", "Малышев", "Денис", "Амилович", telegram="@dmmvrs", phone = "+79298491219", gitHub = "github.com/dmmvrs")
-    student1.printInfo()
-    println()
-
-    val student2 = Student("2707", "Иванов", "Петр", "Сергеевич", "+79298323235", gitHub = "github.com/dmmvrs")
-    student2.printInfo()
-
-    val student3 = Student("2708", "Пупкин", "Иван", "Петрович", "124234242")
-    student2.printInfo()
+    try {
+        val frst = Student(1, "Ralf", "Bobby", "Braun", "@RaBBiT", git = "github.com/RuMiJ")
+        val sec = Student(2, "Ruby", "John", "Milligan", git = "github.com/RuMiJ", phone = "81234567890")
+        val thrd = Student(3, "Tomb", "Raider", "Third", git = "github.com/RuMiJ", phone = "+78889990000")
+        thrd.setContacts(tg = "@adood")
+        thrd.write()
+        val ph = Student(4, "Tommy", "Doggy", "Poppy", email = "TDP@mail.ru", git = "github.com/TDPgit")
+        val stringData = "5 Hail Malia Tate @maliaht github.com/MalHT htMalia@mail.ru 89996664455"
+        val fromStr = Student(stringData)
+    } catch (e: IllegalArgumentException) {
+        println(e.message)
+    }
 }
