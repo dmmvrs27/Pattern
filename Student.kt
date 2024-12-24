@@ -4,23 +4,7 @@ import java.io.IOException
 class Student(id: Int, surname: String, name: String, patronymic: String, tg: String? = null,
               git: String? = null, email: String? = null, phone: String? = null)
     : StudentBase(id, surname, name, patronymic, tg, git, email, phone) {
-    companion object {
-        fun readFromTxt(path: String): List<Student>{
-            val file = File(path)
-            if (!file.exists() || !file.canRead())
-                throw IOException("Path is incorrect!")
-            println("Read from $path:\n")
-            return file.readLines().map { Student(it) }
-        }
-        fun writeToTxt(path: String, students: List<Student>) {
-            val file = File(path)
-            if (!file.exists() || !file.canWrite())
-                throw IOException("Path is incorrect!")
-            students.map { file.appendText(it.toTxt().trim()
-                    + "\n") }
-            println("Written to $path!\n")
-        }
-    }
+
     init {
         validate()
         println("Студент $id был добавлен успешно!")
